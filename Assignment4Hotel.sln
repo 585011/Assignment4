@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontDesk", "FrontDesk", "{068F1EC5-EA12-41A9-AF06-1B48804E5C7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{3FD1E1FE-9558-47E9-89D3-9F8CDF3E880D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Booking", "Booking", "{765FFC61-B9C5-4FAB-965F-32C0EC8E0219}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{D9AC9047-9A9E-4C5B-B796-2D66BEF15443}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontDeskForms", "FrontDeskForms\FrontDeskForms.csproj", "{0A93B2B0-7451-46F0-8117-E942A308808A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A93B2B0-7451-46F0-8117-E942A308808A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A93B2B0-7451-46F0-8117-E942A308808A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A93B2B0-7451-46F0-8117-E942A308808A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A93B2B0-7451-46F0-8117-E942A308808A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A93B2B0-7451-46F0-8117-E942A308808A} = {068F1EC5-EA12-41A9-AF06-1B48804E5C7A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FD8B717-5CD0-4B91-8A18-192EFE315DF8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\bin\Debug\net6.0-windows\FrontDeskForms.exe
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\bin\Debug\net6.0-windows\FrontDeskForms.deps.json
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\bin\Debug\net6.0-windows\FrontDeskForms.runtimeconfig.json
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\bin\Debug\net6.0-windows\FrontDeskForms.dll
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\bin\Debug\net6.0-windows\FrontDeskForms.pdb
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.csproj.AssemblyReference.cache
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.Form1.resources
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.csproj.GenerateResource.cache
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.AssemblyInfoInputs.cache
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.AssemblyInfo.cs
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.csproj.CoreCompileInputs.cache
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.dll
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\refint\FrontDeskForms.dll
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.pdb
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\FrontDeskForms.genruntimeconfig.cache
+C:\Users\nitra\source\repos\Assignment4Hotel\FrontDeskForms\obj\Debug\net6.0-windows\ref\FrontDeskForms.dll
