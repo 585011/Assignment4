@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nitra\\source\\repos\\Assignment4Hotel\\FrontDeskForms\\FrontDeskForms.csproj": {}
+    "C:\\Users\\alexo_o0po8pb\\Source\\Repos\\Assignment4\\FrontDeskForms\\FrontDeskForms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nitra\\source\\repos\\Assignment4Hotel\\FrontDeskForms\\FrontDeskForms.csproj": {
+    "C:\\Users\\alexo_o0po8pb\\Source\\Repos\\Assignment4\\FrontDeskForms\\FrontDeskForms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nitra\\source\\repos\\Assignment4Hotel\\FrontDeskForms\\FrontDeskForms.csproj",
+        "projectUniqueName": "C:\\Users\\alexo_o0po8pb\\Source\\Repos\\Assignment4\\FrontDeskForms\\FrontDeskForms.csproj",
         "projectName": "FrontDeskForms",
-        "projectPath": "C:\\Users\\nitra\\source\\repos\\Assignment4Hotel\\FrontDeskForms\\FrontDeskForms.csproj",
-        "packagesPath": "C:\\Users\\nitra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nitra\\source\\repos\\Assignment4Hotel\\FrontDeskForms\\obj\\",
+        "projectPath": "C:\\Users\\alexo_o0po8pb\\Source\\Repos\\Assignment4\\FrontDeskForms\\FrontDeskForms.csproj",
+        "packagesPath": "C:\\Users\\alexo_o0po8pb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexo_o0po8pb\\Source\\Repos\\Assignment4\\FrontDeskForms\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nitra\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\alexo_o0po8pb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.org": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
@@ -61,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
