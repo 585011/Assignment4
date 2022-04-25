@@ -1,0 +1,16 @@
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\FrontDesk.exe.config
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\FrontDesk.exe
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\FrontDesk.pdb
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\EntityFramework.dll
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\EntityFramework.xml
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.csproj.AssemblyReference.cache
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.csproj.SuggestedBindingRedirects.cache
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.Form1.resources
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.Properties.Resources.resources
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.csproj.GenerateResource.cache
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.csproj.CoreCompileInputs.cache
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.csproj.CopyComplete
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.exe
+C:\Users\nitra\source\repos\Assignment4\FrontDesk\obj\Debug\FrontDesk.pdb

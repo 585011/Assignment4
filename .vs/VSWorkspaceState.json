@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FrontDeskForms",
+    "\\LoginBookRoom",
+    "\\MaintenanceApp",
+    "\\MaintenanceApp\\MaintenanceApp_ASP_Forms"
   ],
+  "SelectedNode": "\\FrontDeskForms\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
