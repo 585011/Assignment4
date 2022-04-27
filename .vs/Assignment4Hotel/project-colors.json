@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0a93b2b0-7451-46f0-8117-e942a308808a": {
+      "ProjectGuid": "0a93b2b0-7451-46f0-8117-e942a308808a",
+      "DisplayName": "FrontDeskForms",
+      "ColorIndex": 0
+    },
+    "82f03a49-a6a7-4afa-9044-10db6a88a23a": {
+      "ProjectGuid": "82f03a49-a6a7-4afa-9044-10db6a88a23a",
+      "DisplayName": "LoginBookRoom",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
