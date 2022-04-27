@@ -1,0 +1,72 @@
+﻿@model BookRoom.Bookings
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bookings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.roomID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roomID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bookingfrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookingfrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bookingto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookingto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkedin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkedin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkedout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkedout)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
