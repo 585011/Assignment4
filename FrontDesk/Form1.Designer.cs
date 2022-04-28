@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label bookingIDLabel;
             System.Windows.Forms.Label roomIDLabel;
             System.Windows.Forms.Label usernameLabel;
@@ -37,22 +36,23 @@
             System.Windows.Forms.Label bookingtoLabel;
             System.Windows.Forms.Label checkedinLabel;
             System.Windows.Forms.Label checkedoutLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.oblig4DataSet = new FrontDesk.Oblig4DataSet();
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsTableAdapter = new FrontDesk.Oblig4DataSetTableAdapters.BookingsTableAdapter();
             this.tableAdapterManager = new FrontDesk.Oblig4DataSetTableAdapters.TableAdapterManager();
             this.bookingsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bookingsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bookingsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +70,11 @@
             this.checkedinCheckBox = new System.Windows.Forms.CheckBox();
             this.checkedoutCheckBox = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomsTableAdapter = new FrontDesk.Oblig4DataSetTableAdapters.RoomsTableAdapter();
+            this.roomsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Booked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             bookingIDLabel = new System.Windows.Forms.Label();
             roomIDLabel = new System.Windows.Forms.Label();
             usernameLabel = new System.Windows.Forms.Label();
@@ -82,7 +87,72 @@
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingNavigator)).BeginInit();
             this.bookingsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bookingIDLabel
+            // 
+            bookingIDLabel.AutoSize = true;
+            bookingIDLabel.Location = new System.Drawing.Point(90, 59);
+            bookingIDLabel.Name = "bookingIDLabel";
+            bookingIDLabel.Size = new System.Drawing.Size(90, 20);
+            bookingIDLabel.TabIndex = 2;
+            bookingIDLabel.Text = "booking ID:";
+            // 
+            // roomIDLabel
+            // 
+            roomIDLabel.AutoSize = true;
+            roomIDLabel.Location = new System.Drawing.Point(90, 91);
+            roomIDLabel.Name = "roomIDLabel";
+            roomIDLabel.Size = new System.Drawing.Size(70, 20);
+            roomIDLabel.TabIndex = 4;
+            roomIDLabel.Text = "room ID:";
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Location = new System.Drawing.Point(90, 123);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new System.Drawing.Size(84, 20);
+            usernameLabel.TabIndex = 6;
+            usernameLabel.Text = "username:";
+            // 
+            // bookingfromLabel
+            // 
+            bookingfromLabel.AutoSize = true;
+            bookingfromLabel.Location = new System.Drawing.Point(90, 156);
+            bookingfromLabel.Name = "bookingfromLabel";
+            bookingfromLabel.Size = new System.Drawing.Size(101, 20);
+            bookingfromLabel.TabIndex = 8;
+            bookingfromLabel.Text = "bookingfrom:";
+            // 
+            // bookingtoLabel
+            // 
+            bookingtoLabel.AutoSize = true;
+            bookingtoLabel.Location = new System.Drawing.Point(90, 188);
+            bookingtoLabel.Name = "bookingtoLabel";
+            bookingtoLabel.Size = new System.Drawing.Size(83, 20);
+            bookingtoLabel.TabIndex = 10;
+            bookingtoLabel.Text = "bookingto:";
+            // 
+            // checkedinLabel
+            // 
+            checkedinLabel.AutoSize = true;
+            checkedinLabel.Location = new System.Drawing.Point(90, 221);
+            checkedinLabel.Name = "checkedinLabel";
+            checkedinLabel.Size = new System.Drawing.Size(85, 20);
+            checkedinLabel.TabIndex = 12;
+            checkedinLabel.Text = "checkedin:";
+            // 
+            // checkedoutLabel
+            // 
+            checkedoutLabel.AutoSize = true;
+            checkedoutLabel.Location = new System.Drawing.Point(90, 252);
+            checkedoutLabel.Name = "checkedoutLabel";
+            checkedoutLabel.Size = new System.Drawing.Size(96, 20);
+            checkedoutLabel.TabIndex = 14;
+            checkedoutLabel.Text = "checkedout:";
             // 
             // oblig4DataSet
             // 
@@ -134,9 +204,34 @@
             this.bookingsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bookingsBindingNavigator.Name = "bookingsBindingNavigator";
             this.bookingsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bookingsBindingNavigator.Size = new System.Drawing.Size(1127, 33);
+            this.bookingsBindingNavigator.Size = new System.Drawing.Size(1309, 33);
             this.bookingsBindingNavigator.TabIndex = 0;
             this.bookingsBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -144,7 +239,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 20);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -153,13 +248,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 20);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -170,17 +265,10 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 25);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -202,33 +290,15 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // bookingsBindingNavigatorSaveItem
             // 
             this.bookingsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bookingsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bookingsBindingNavigatorSaveItem.Image")));
             this.bookingsBindingNavigatorSaveItem.Name = "bookingsBindingNavigatorSaveItem";
-            this.bookingsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.bookingsBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
             this.bookingsBindingNavigatorSaveItem.Text = "Save Data";
             this.bookingsBindingNavigatorSaveItem.Click += new System.EventHandler(this.bookingsBindingNavigatorSaveItem_Click);
             // 
@@ -245,11 +315,11 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.bookingsDataGridView.DataSource = this.bookingsBindingSource;
-            this.bookingsDataGridView.Location = new System.Drawing.Point(59, 302);
+            this.bookingsDataGridView.Location = new System.Drawing.Point(59, 288);
             this.bookingsDataGridView.Name = "bookingsDataGridView";
             this.bookingsDataGridView.RowHeadersWidth = 62;
             this.bookingsDataGridView.RowTemplate.Height = 28;
-            this.bookingsDataGridView.Size = new System.Drawing.Size(1024, 220);
+            this.bookingsDataGridView.Size = new System.Drawing.Size(1230, 339);
             this.bookingsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -309,15 +379,6 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 150;
             // 
-            // bookingIDLabel
-            // 
-            bookingIDLabel.AutoSize = true;
-            bookingIDLabel.Location = new System.Drawing.Point(90, 59);
-            bookingIDLabel.Name = "bookingIDLabel";
-            bookingIDLabel.Size = new System.Drawing.Size(90, 20);
-            bookingIDLabel.TabIndex = 2;
-            bookingIDLabel.Text = "booking ID:";
-            // 
             // bookingIDTextBox
             // 
             this.bookingIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookingsBindingSource, "bookingID", true));
@@ -325,15 +386,6 @@
             this.bookingIDTextBox.Name = "bookingIDTextBox";
             this.bookingIDTextBox.Size = new System.Drawing.Size(200, 26);
             this.bookingIDTextBox.TabIndex = 3;
-            // 
-            // roomIDLabel
-            // 
-            roomIDLabel.AutoSize = true;
-            roomIDLabel.Location = new System.Drawing.Point(90, 91);
-            roomIDLabel.Name = "roomIDLabel";
-            roomIDLabel.Size = new System.Drawing.Size(70, 20);
-            roomIDLabel.TabIndex = 4;
-            roomIDLabel.Text = "room ID:";
             // 
             // roomIDTextBox
             // 
@@ -343,15 +395,6 @@
             this.roomIDTextBox.Size = new System.Drawing.Size(200, 26);
             this.roomIDTextBox.TabIndex = 5;
             // 
-            // usernameLabel
-            // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Location = new System.Drawing.Point(90, 123);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new System.Drawing.Size(84, 20);
-            usernameLabel.TabIndex = 6;
-            usernameLabel.Text = "username:";
-            // 
             // usernameTextBox
             // 
             this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookingsBindingSource, "username", true));
@@ -359,15 +402,6 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(200, 26);
             this.usernameTextBox.TabIndex = 7;
-            // 
-            // bookingfromLabel
-            // 
-            bookingfromLabel.AutoSize = true;
-            bookingfromLabel.Location = new System.Drawing.Point(90, 156);
-            bookingfromLabel.Name = "bookingfromLabel";
-            bookingfromLabel.Size = new System.Drawing.Size(101, 20);
-            bookingfromLabel.TabIndex = 8;
-            bookingfromLabel.Text = "bookingfrom:";
             // 
             // bookingfromDateTimePicker
             // 
@@ -377,15 +411,6 @@
             this.bookingfromDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.bookingfromDateTimePicker.TabIndex = 9;
             // 
-            // bookingtoLabel
-            // 
-            bookingtoLabel.AutoSize = true;
-            bookingtoLabel.Location = new System.Drawing.Point(90, 188);
-            bookingtoLabel.Name = "bookingtoLabel";
-            bookingtoLabel.Size = new System.Drawing.Size(83, 20);
-            bookingtoLabel.TabIndex = 10;
-            bookingtoLabel.Text = "bookingto:";
-            // 
             // bookingtoDateTimePicker
             // 
             this.bookingtoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bookingsBindingSource, "bookingto", true));
@@ -393,15 +418,6 @@
             this.bookingtoDateTimePicker.Name = "bookingtoDateTimePicker";
             this.bookingtoDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.bookingtoDateTimePicker.TabIndex = 11;
-            // 
-            // checkedinLabel
-            // 
-            checkedinLabel.AutoSize = true;
-            checkedinLabel.Location = new System.Drawing.Point(90, 221);
-            checkedinLabel.Name = "checkedinLabel";
-            checkedinLabel.Size = new System.Drawing.Size(85, 20);
-            checkedinLabel.TabIndex = 12;
-            checkedinLabel.Text = "checkedin:";
             // 
             // checkedinCheckBox
             // 
@@ -413,15 +429,7 @@
             this.checkedinCheckBox.Text = "checkBox1";
             this.checkedinCheckBox.UseVisualStyleBackColor = true;
             this.checkedinCheckBox.CheckStateChanged += new System.EventHandler(this.checkedinCheckBox_CheckStateChanged);
-            // 
-            // checkedoutLabel
-            // 
-            checkedoutLabel.AutoSize = true;
-            checkedoutLabel.Location = new System.Drawing.Point(90, 252);
-            checkedoutLabel.Name = "checkedoutLabel";
-            checkedoutLabel.Size = new System.Drawing.Size(96, 20);
-            checkedoutLabel.TabIndex = 14;
-            checkedoutLabel.Text = "checkedout:";
+            this.checkedinCheckBox.Click += new System.EventHandler(this.checkedinCheckBox_Click);
             // 
             // checkedoutCheckBox
             // 
@@ -433,6 +441,7 @@
             this.checkedoutCheckBox.Text = "checkBox1";
             this.checkedoutCheckBox.UseVisualStyleBackColor = true;
             this.checkedoutCheckBox.CheckStateChanged += new System.EventHandler(this.checkedoutCheckBox_CheckStateChanged);
+            this.checkedoutCheckBox.Click += new System.EventHandler(this.checkedoutCheckBox_Click);
             // 
             // button1
             // 
@@ -445,11 +454,52 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // roomsBindingSource
+            // 
+            this.roomsBindingSource.DataMember = "Rooms";
+            this.roomsBindingSource.DataSource = this.oblig4DataSet;
+            // 
+            // roomsTableAdapter
+            // 
+            this.roomsTableAdapter.ClearBeforeFill = true;
+            // 
+            // roomsDataGridView
+            // 
+            this.roomsDataGridView.AutoGenerateColumns = false;
+            this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.roomsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.Booked});
+            this.roomsDataGridView.DataSource = this.roomsBindingSource;
+            this.roomsDataGridView.Location = new System.Drawing.Point(580, 20);
+            this.roomsDataGridView.Name = "roomsDataGridView";
+            this.roomsDataGridView.RowHeadersWidth = 62;
+            this.roomsDataGridView.RowTemplate.Height = 28;
+            this.roomsDataGridView.Size = new System.Drawing.Size(585, 220);
+            this.roomsDataGridView.TabIndex = 17;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "roomID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "roomID";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // Booked
+            // 
+            this.Booked.HeaderText = "Booked";
+            this.Booked.MinimumWidth = 8;
+            this.Booked.Name = "Booked";
+            this.Booked.Width = 150;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 653);
+            this.ClientSize = new System.Drawing.Size(1309, 653);
+            this.Controls.Add(this.roomsDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(bookingIDLabel);
             this.Controls.Add(this.bookingIDTextBox);
@@ -476,6 +526,8 @@
             this.bookingsBindingNavigator.ResumeLayout(false);
             this.bookingsBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,6 +568,11 @@
         private System.Windows.Forms.CheckBox checkedinCheckBox;
         private System.Windows.Forms.CheckBox checkedoutCheckBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource roomsBindingSource;
+        private Oblig4DataSetTableAdapters.RoomsTableAdapter roomsTableAdapter;
+        private System.Windows.Forms.DataGridView roomsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Booked;
     }
 }
 
