@@ -6,14 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using BookRoom;
-using BookRoom.Data;
+using BookRoom.Models;
 
 namespace BookRoom.Controllers
 {
     public class CustomersController : Controller
     {
-        private BookRoomContext db = new BookRoomContext();
+        private oblig4Entities9 db = new oblig4Entities9();
 
         // GET: Customers
         public ActionResult Index()
@@ -22,7 +21,7 @@ namespace BookRoom.Controllers
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -47,7 +46,7 @@ namespace BookRoom.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,username,pass,firstname,lastname")] Customers customers)
+        public ActionResult Create([Bind(Include = "CustomersID,pass,firstname,lastname")] Customers customers)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +59,7 @@ namespace BookRoom.Controllers
         }
 
         // GET: Customers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -79,7 +78,7 @@ namespace BookRoom.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,username,pass,firstname,lastname")] Customers customers)
+        public ActionResult Edit([Bind(Include = "CustomersID,pass,firstname,lastname")] Customers customers)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +90,7 @@ namespace BookRoom.Controllers
         }
 
         // GET: Customers/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -108,7 +107,7 @@ namespace BookRoom.Controllers
         // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Customers customers = db.Customers.Find(id);
             db.Customers.Remove(customers);

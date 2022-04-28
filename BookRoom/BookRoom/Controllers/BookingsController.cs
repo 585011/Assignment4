@@ -6,19 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using BookRoom;
-using BookRoom.Data;
+using BookRoom.Models;
 
 namespace BookRoom.Controllers
 {
     public class BookingsController : Controller
     {
-        private BookRoomContext db = new BookRoomContext();
+        private oblig4Entities9 db = new oblig4Entities9();
 
         // GET: Bookings
         public ActionResult Index()
         {
-            return View(db.Bookings.ToList());
+            var bookings = db.Bookings.Include(b => b.Rooms).Include(b => b.Customers);
+            return View(bookings.ToList());
         }
 
         // GET: Bookings/Details/5
@@ -39,6 +39,8 @@ namespace BookRoom.Controllers
         // GET: Bookings/Create
         public ActionResult Create()
         {
+            ViewBag.roomID = new SelectList(db.Rooms, "RoomsID", "RoomsID");
+            ViewBag.username = new SelectList(db.Customers, "CustomersID", "pass");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace BookRoom.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,roomID,username,bookingfrom,bookingto,checkedin,checkedout")] Bookings bookings)
+        public ActionResult Create([Bind(Include = "BookingsID,roomID,username,bookingfrom,bookingto,checkedin,checkedout")] Bookings bookings)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,8 @@ namespace BookRoom.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.roomID = new SelectList(db.Rooms, "RoomsID", "RoomsID", bookings.roomID);
+            ViewBag.username = new SelectList(db.Customers, "CustomersID", "pass", bookings.username);
             return View(bookings);
         }
 
@@ -71,6 +75,8 @@ namespace BookRoom.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.roomID = new SelectList(db.Rooms, "RoomsID", "RoomsID", bookings.roomID);
+            ViewBag.username = new SelectList(db.Customers, "CustomersID", "pass", bookings.username);
             return View(bookings);
         }
 
@@ -79,7 +85,7 @@ namespace BookRoom.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,roomID,username,bookingfrom,bookingto,checkedin,checkedout")] Bookings bookings)
+        public ActionResult Edit([Bind(Include = "BookingsID,roomID,username,bookingfrom,bookingto,checkedin,checkedout")] Bookings bookings)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +93,8 @@ namespace BookRoom.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.roomID = new SelectList(db.Rooms, "RoomsID", "RoomsID", bookings.roomID);
+            ViewBag.username = new SelectList(db.Customers, "CustomersID", "pass", bookings.username);
             return View(bookings);
         }
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d0998b9961d4a4fb5f28c62273215aa" Name="Diagram1">
+        <EntityTypeShape EntityType="oblig4Model.Bookings" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="oblig4Model.Customers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oblig4Model.Rooms" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oblig4Model.Tasks" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="oblig4Model.FK__Bookings__roomID__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="oblig4Model.FK__Bookings__userna__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="oblig4Model.FK__Tasks__roomID__2C3393D0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

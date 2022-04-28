@@ -1,5 +1,11 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "1182a74c-8b24-4f0e-b731-8f32d370272a": {
+      "ProjectGuid": "1182a74c-8b24-4f0e-b731-8f32d370272a",
+      "DisplayName": "MaintenanceApp_ASP_Forms",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
 }

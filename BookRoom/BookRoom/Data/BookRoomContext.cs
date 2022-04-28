@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookRoom.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -19,12 +20,12 @@ namespace BookRoom.Data
         {
         }
 
-        public System.Data.Entity.DbSet<BookRoom.Bookings> Bookings { get; set; }
+        public System.Data.Entity.DbSet<Bookings> Bookings { get; set; }
 
-        public System.Data.Entity.DbSet<BookRoom.Customers> Customers { get; set; }
+        public System.Data.Entity.DbSet<Customers> Customers { get; set; }
 
-        public System.Data.Entity.DbSet<BookRoom.Rooms> Rooms { get; set; }
+        public System.Data.Entity.DbSet<Rooms> Rooms { get; set; }
 
-        public System.Data.Entity.DbSet<BookRoom.Tasks> Tasks { get; set; }
+        public System.Data.Entity.DbSet<Tasks> Tasks { get; set; }
     }
 }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="oblig4ModelStoreContainer" CdmEntityContainer="oblig4Entities6">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="oblig4Model.Bookings">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="bookingfrom" ColumnName="bookingfrom" />
+          <ScalarProperty Name="bookingto" ColumnName="bookingto" />
+          <ScalarProperty Name="checkedin" ColumnName="checkedin" />
+          <ScalarProperty Name="checkedout" ColumnName="checkedout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="oblig4Model.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="oblig4Model.Rooms">
+        <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="beds" ColumnName="beds" />
+          <ScalarProperty Name="size" ColumnName="size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="oblig4Model.Tasks">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
+          <ScalarProperty Name="task" ColumnName="task" />
+          <ScalarProperty Name="stat" ColumnName="stat" />
+          <ScalarProperty Name="deskcomment" ColumnName="deskcomment" />
+          <ScalarProperty Name="servicecomment" ColumnName="servicecomment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="oblig4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bookings">
+          <Key>
+            <PropertyRef Name="BookingsID" />
+          </Key>
+          <Property Name="BookingsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roomID" Type="int" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="bookingfrom" Type="datetime" Nullable="false" />
+          <Property Name="bookingto" Type="datetime" Nullable="false" />
+          <Property Name="checkedin" Type="datetime" />
+          <Property Name="checkedout" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomersID" />
+          </Key>
+          <Property Name="CustomersID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="lastname" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="RoomsID" />
+          </Key>
+          <Property Name="RoomsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="beds" Type="int" Nullable="false" />
+          <Property Name="size" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="TasksID" />
+          </Key>
+          <Property Name="TasksID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roomID" Type="int" />
+          <Property Name="task" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="stat" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="deskcomment" Type="varchar" MaxLength="100" />
+          <Property Name="servicecomment" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__Bookings__roomID__286302EC">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="RoomsID" />
+            </Principal>
+            <Dependent Role="Bookings">
+              <PropertyRef Name="roomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bookings__userna__29572725">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomersID" />
+            </Principal>
+            <Dependent Role="Bookings">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tasks__roomID__2C3393D0">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="RoomsID" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="roomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="oblig4ModelStoreContainer">
+          <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Bookings__roomID__286302EC" Association="Self.FK__Bookings__roomID__286302EC">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Bookings" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bookings__userna__29572725" Association="Self.FK__Bookings__userna__29572725">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Bookings" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tasks__roomID__2C3393D0" Association="Self.FK__Tasks__roomID__2C3393D0">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="oblig4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bookings">
+          <Key>
+            <PropertyRef Name="BookingsID" />
+          </Key>
+          <Property Name="BookingsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roomID" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="bookingfrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="bookingto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="checkedin" Type="DateTime" Precision="3" />
+          <Property Name="checkedout" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Bookings__roomID__286302EC" FromRole="Bookings" ToRole="Rooms" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Bookings__userna__29572725" FromRole="Bookings" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomersID" />
+          </Key>
+          <Property Name="CustomersID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__userna__29572725" FromRole="Customers" ToRole="Bookings" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="RoomsID" />
+          </Key>
+          <Property Name="RoomsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="beds" Type="Int32" Nullable="false" />
+          <Property Name="size" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__roomID__286302EC" FromRole="Rooms" ToRole="Bookings" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__roomID__2C3393D0" FromRole="Rooms" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="TasksID" />
+          </Key>
+          <Property Name="TasksID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roomID" Type="Int32" />
+          <Property Name="task" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stat" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="deskcomment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="servicecomment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Tasks__roomID__2C3393D0" FromRole="Tasks" ToRole="Rooms" />
+        </EntityType>
+        <Association Name="FK__Bookings__roomID__286302EC">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="RoomsID" />
+            </Principal>
+            <Dependent Role="Bookings">
+              <PropertyRef Name="roomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bookings__userna__29572725">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomersID" />
+            </Principal>
+            <Dependent Role="Bookings">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tasks__roomID__2C3393D0">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="RoomsID" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="roomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="oblig4Entities9" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="Self.Bookings" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" />
+          <AssociationSet Name="FK__Bookings__roomID__286302EC" Association="Self.FK__Bookings__roomID__286302EC">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Bookings" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bookings__userna__29572725" Association="Self.FK__Bookings__userna__29572725">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Bookings" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tasks__roomID__2C3393D0" Association="Self.FK__Tasks__roomID__2C3393D0">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="oblig4ModelStoreContainer" CdmEntityContainer="oblig4Entities9">
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="oblig4Model.Bookings">
+              <MappingFragment StoreEntitySet="Bookings">
+                <ScalarProperty Name="BookingsID" ColumnName="BookingsID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="bookingfrom" ColumnName="bookingfrom" />
+                <ScalarProperty Name="bookingto" ColumnName="bookingto" />
+                <ScalarProperty Name="checkedin" ColumnName="checkedin" />
+                <ScalarProperty Name="checkedout" ColumnName="checkedout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="oblig4Model.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomersID" ColumnName="CustomersID" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="oblig4Model.Rooms">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="RoomsID" ColumnName="RoomsID" />
+                <ScalarProperty Name="beds" ColumnName="beds" />
+                <ScalarProperty Name="size" ColumnName="size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="oblig4Model.Tasks">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="TasksID" ColumnName="TasksID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="task" ColumnName="task" />
+                <ScalarProperty Name="stat" ColumnName="stat" />
+                <ScalarProperty Name="deskcomment" ColumnName="deskcomment" />
+                <ScalarProperty Name="servicecomment" ColumnName="servicecomment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

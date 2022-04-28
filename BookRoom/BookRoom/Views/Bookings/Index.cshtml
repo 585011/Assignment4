@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookRoom.Bookings>
+﻿@model IEnumerable<BookRoom.Models.Bookings>
 
 @{
     ViewBag.Title = "Index";
@@ -12,12 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.roomID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.username)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.bookingfrom)
         </th>
         <th>
@@ -29,17 +23,17 @@
         <th>
             @Html.DisplayNameFor(model => model.checkedout)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rooms.RoomsID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customers.pass)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.roomID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.username)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.bookingfrom)
         </td>
@@ -53,9 +47,15 @@
             @Html.DisplayFor(modelItem => item.checkedout)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.Rooms.RoomsID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customers.pass)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookingsID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookingsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookingsID })
         </td>
     </tr>
 }

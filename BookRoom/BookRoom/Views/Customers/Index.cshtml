@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookRoom.Customers>
+﻿@model IEnumerable<BookRoom.Models.Customers>
 
 @{
     ViewBag.Title = "Index";
@@ -11,9 +11,6 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.username)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.pass)
         </th>
@@ -29,9 +26,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.username)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.pass)
         </td>
         <td>
@@ -41,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.lastname)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomersID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomersID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomersID })
         </td>
     </tr>
 }
