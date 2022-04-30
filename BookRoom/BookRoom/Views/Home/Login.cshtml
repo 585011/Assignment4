@@ -1,0 +1,47 @@
+﻿@model BookRoom.Models.Customers
+@{
+    ViewBag.Title = "Login";
+}
+<h2 valign="top">
+    Login
+</h2>
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true)
+
+    <div style="border: solid 1px #ccc; padding: 35px 0 30px 30px; border-radius: 5px;
+        width: 325px; margin: auto; display: table;">
+        <table>
+            <tr>
+                <td valign="top">
+                    <p>brukernavn</p>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.CustomersID)
+                    <div style="height: 25px;">
+                        @Html.ValidationMessageFor(model => model.CustomersID)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>passord</p>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.pass)
+                    <div valign="top" style="height: 20px;">
+                        @Html.ValidationMessageFor(model => model.pass)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
