@@ -40,9 +40,11 @@ namespace FrontDesk
             this.Validate();
             this.bookingsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.oblig4DataSet);
+            // Sjekk om ditta funka på dei andre metodane ^
 
             //this.Invalidate();
             this.Refresh();
+            
         }
 
         private void checkedinCheckBox_CheckStateChanged(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace FrontDesk
                 db.Bookings.Find(book).checkedin = DateTime.Now;
                 db.SaveChanges();
 
+                
                 //this.checkedinCheckBox.CheckState = CheckState.Checked;
                 //MessageBox.Show(checkedinCheckBox.CheckState.ToString());
 
@@ -69,10 +72,10 @@ namespace FrontDesk
             }
             else
             {
-                MessageBox.Show(checkedinCheckBox.CheckState.ToString());
+                //MessageBox.Show(checkedinCheckBox.CheckState.ToString());
                 return;
             }
-            this.Refresh();
+            //this.Refresh();
         }
 
         private void checkedoutCheckBox_CheckStateChanged(object sender, EventArgs e)
@@ -86,6 +89,7 @@ namespace FrontDesk
                 int book = bookList.Find(b => (b.bookingID.Equals(nn))).bookingID;
                 db.Bookings.Find(book).checkedout = DateTime.Now;
                 db.SaveChanges();
+
 
                 //book.checkedin.Value = DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss");
                 //bookList.Find(b => b.bookingID.Equals(nn)).checkedin.Value.;
