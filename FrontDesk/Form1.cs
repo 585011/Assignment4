@@ -15,6 +15,7 @@ namespace FrontDesk
         Oblig4Entities db;
         List<Bookings> bookList;
         List<Rooms> roomsList;
+        List<Tasks> taskList;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace FrontDesk
             db = new Oblig4Entities();
             bookList = db.Bookings.ToList();
             roomsList = db.Rooms.ToList();
+            taskList = db.Tasks.ToList();
             bookedRooms();
 
         }
@@ -42,8 +44,12 @@ namespace FrontDesk
             this.tableAdapterManager.UpdateAll(this.oblig4DataSet);
             // Sjekk om ditta funka på dei andre metodane ^
 
-            //this.Invalidate();
-            this.Refresh();
+            SetDataGridView();
+            if (textBox1.Text.Length != 0)
+            {
+                createTask();
+            }
+            db.SaveChanges();
             
         }
 
@@ -61,13 +67,6 @@ namespace FrontDesk
                 db.SaveChanges();
 
                 
-                //this.checkedinCheckBox.CheckState = CheckState.Checked;
-                //MessageBox.Show(checkedinCheckBox.CheckState.ToString());
-
-
-
-                //book.checkedin.Value = DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss");
-                //bookList.Find(b => b.bookingID.Equals(nn)).checkedin.Value.;
 
             }
             else
@@ -88,7 +87,7 @@ namespace FrontDesk
                 int nn = int.Parse(bookingIDTextBox.Text);
                 int book = bookList.Find(b => (b.bookingID.Equals(nn))).bookingID;
                 db.Bookings.Find(book).checkedout = DateTime.Now;
-                db.SaveChanges();
+                
 
 
                 //book.checkedin.Value = DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss");
@@ -110,17 +109,19 @@ namespace FrontDesk
         private void checkedinCheckBox_Click(object sender, EventArgs e)
         {
 
-            //if (checkedinCheckBox.Checked)
-            //{
-            //    //MessageBox.Show(checkedinCheckBox.CheckState.ToString());
-            //    checkedinCheckBox.Checked = true;
-            //    this.Invalidate();
-            //} else
-            //{
-            //    checkedinCheckBox.Checked = false;
-            //    this.Invalidate();
-            //}
         }
+
+
+        public void SetDataGridView()
+        {
+            bookingsDataGridView.AutoGenerateColumns = false;
+            bookingsDataGridView.DataSource = db.Bookings.ToList<Bookings>();
+            
+            roomsDataGridView.AutoGenerateColumns = false;
+            roomsDataGridView.DataSource = db.Rooms.ToList<Rooms>();
+            bookedRooms();
+        }
+
 
         private void checkedoutCheckBox_Click(object sender, EventArgs e)
         {
@@ -137,11 +138,27 @@ namespace FrontDesk
                             roomsDataGridView.Rows[xx-1].Cells["Booked"].Value = "Booked from: " + x.bookingfrom + ", To: " + x.bookingto;
                         }
                     });
-            //int rowIndex = (n-1);
-
 
             this.Refresh();
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+        
+        private void createTask()
+        {
+            Tasks task = new Tasks();
+
+            string text = textBox1.Text;
+            task.roomID = Convert.ToInt32(roomIDTextBox.Text);
+            task.task = comboBox1.SelectedItem.ToString();
+            task.stat = "New";
+            task.deskcomment = text;
+            task.servicecomment = null;
+
+            db.Tasks.Add(task);
         }
     }
 }

@@ -34,8 +34,6 @@
             System.Windows.Forms.Label usernameLabel;
             System.Windows.Forms.Label bookingfromLabel;
             System.Windows.Forms.Label bookingtoLabel;
-            System.Windows.Forms.Label checkedinLabel;
-            System.Windows.Forms.Label checkedoutLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.oblig4DataSet = new FrontDesk.Oblig4DataSet();
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -75,13 +73,14 @@
             this.roomsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Booked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             bookingIDLabel = new System.Windows.Forms.Label();
             roomIDLabel = new System.Windows.Forms.Label();
             usernameLabel = new System.Windows.Forms.Label();
             bookingfromLabel = new System.Windows.Forms.Label();
             bookingtoLabel = new System.Windows.Forms.Label();
-            checkedinLabel = new System.Windows.Forms.Label();
-            checkedoutLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oblig4DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingNavigator)).BeginInit();
@@ -136,24 +135,6 @@
             bookingtoLabel.TabIndex = 10;
             bookingtoLabel.Text = "bookingto:";
             // 
-            // checkedinLabel
-            // 
-            checkedinLabel.AutoSize = true;
-            checkedinLabel.Location = new System.Drawing.Point(90, 221);
-            checkedinLabel.Name = "checkedinLabel";
-            checkedinLabel.Size = new System.Drawing.Size(85, 20);
-            checkedinLabel.TabIndex = 12;
-            checkedinLabel.Text = "checkedin:";
-            // 
-            // checkedoutLabel
-            // 
-            checkedoutLabel.AutoSize = true;
-            checkedoutLabel.Location = new System.Drawing.Point(90, 252);
-            checkedoutLabel.Name = "checkedoutLabel";
-            checkedoutLabel.Size = new System.Drawing.Size(96, 20);
-            checkedoutLabel.TabIndex = 14;
-            checkedoutLabel.Text = "checkedout:";
-            // 
             // oblig4DataSet
             // 
             this.oblig4DataSet.DataSetName = "Oblig4DataSet";
@@ -204,7 +185,7 @@
             this.bookingsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bookingsBindingNavigator.Name = "bookingsBindingNavigator";
             this.bookingsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bookingsBindingNavigator.Size = new System.Drawing.Size(1309, 33);
+            this.bookingsBindingNavigator.Size = new System.Drawing.Size(1354, 33);
             this.bookingsBindingNavigator.TabIndex = 0;
             this.bookingsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -315,7 +296,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.bookingsDataGridView.DataSource = this.bookingsBindingSource;
-            this.bookingsDataGridView.Location = new System.Drawing.Point(59, 288);
+            this.bookingsDataGridView.Location = new System.Drawing.Point(79, 287);
             this.bookingsDataGridView.Name = "bookingsDataGridView";
             this.bookingsDataGridView.RowHeadersWidth = 62;
             this.bookingsDataGridView.RowTemplate.Height = 28;
@@ -422,11 +403,11 @@
             // checkedinCheckBox
             // 
             this.checkedinCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bookingsBindingSource, "checkedin", true));
-            this.checkedinCheckBox.Location = new System.Drawing.Point(197, 216);
+            this.checkedinCheckBox.Location = new System.Drawing.Point(94, 217);
             this.checkedinCheckBox.Name = "checkedinCheckBox";
-            this.checkedinCheckBox.Size = new System.Drawing.Size(200, 24);
+            this.checkedinCheckBox.Size = new System.Drawing.Size(138, 24);
             this.checkedinCheckBox.TabIndex = 13;
-            this.checkedinCheckBox.Text = "checkBox1";
+            this.checkedinCheckBox.Text = "Checked In";
             this.checkedinCheckBox.UseVisualStyleBackColor = true;
             this.checkedinCheckBox.CheckStateChanged += new System.EventHandler(this.checkedinCheckBox_CheckStateChanged);
             this.checkedinCheckBox.Click += new System.EventHandler(this.checkedinCheckBox_Click);
@@ -434,11 +415,11 @@
             // checkedoutCheckBox
             // 
             this.checkedoutCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bookingsBindingSource, "checkedout", true));
-            this.checkedoutCheckBox.Location = new System.Drawing.Point(197, 247);
+            this.checkedoutCheckBox.Location = new System.Drawing.Point(94, 247);
             this.checkedoutCheckBox.Name = "checkedoutCheckBox";
-            this.checkedoutCheckBox.Size = new System.Drawing.Size(200, 24);
+            this.checkedoutCheckBox.Size = new System.Drawing.Size(138, 24);
             this.checkedoutCheckBox.TabIndex = 15;
-            this.checkedoutCheckBox.Text = "checkBox1";
+            this.checkedoutCheckBox.Text = "Checked Out";
             this.checkedoutCheckBox.UseVisualStyleBackColor = true;
             this.checkedoutCheckBox.CheckStateChanged += new System.EventHandler(this.checkedoutCheckBox_CheckStateChanged);
             this.checkedoutCheckBox.Click += new System.EventHandler(this.checkedoutCheckBox_Click);
@@ -446,7 +427,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(458, 55);
+            this.button1.Location = new System.Drawing.Point(0, 617);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 41);
             this.button1.TabIndex = 16;
@@ -471,7 +452,7 @@
             this.dataGridViewTextBoxColumn8,
             this.Booked});
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
-            this.roomsDataGridView.Location = new System.Drawing.Point(580, 20);
+            this.roomsDataGridView.Location = new System.Drawing.Point(712, 12);
             this.roomsDataGridView.Name = "roomsDataGridView";
             this.roomsDataGridView.RowHeadersWidth = 62;
             this.roomsDataGridView.RowTemplate.Height = 28;
@@ -494,11 +475,43 @@
             this.Booked.Name = "Booked";
             this.Booked.Width = 150;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(433, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(181, 26);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(474, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Maintenance";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Maintenance",
+            "Roomservice",
+            "Cleaning"});
+            this.comboBox1.Location = new System.Drawing.Point(433, 91);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1309, 653);
+            this.ClientSize = new System.Drawing.Size(1354, 653);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.roomsDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(bookingIDLabel);
@@ -511,9 +524,7 @@
             this.Controls.Add(this.bookingfromDateTimePicker);
             this.Controls.Add(bookingtoLabel);
             this.Controls.Add(this.bookingtoDateTimePicker);
-            this.Controls.Add(checkedinLabel);
             this.Controls.Add(this.checkedinCheckBox);
-            this.Controls.Add(checkedoutLabel);
             this.Controls.Add(this.checkedoutCheckBox);
             this.Controls.Add(this.bookingsDataGridView);
             this.Controls.Add(this.bookingsBindingNavigator);
@@ -573,6 +584,9 @@
         private System.Windows.Forms.DataGridView roomsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Booked;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
