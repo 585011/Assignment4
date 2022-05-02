@@ -15,8 +15,11 @@ namespace BookRoom.Controllers
     {
         private oblig4Entities9 db = new oblig4Entities9();
 
+        public Rooms first = new Rooms();
+
         // GET: Bookings
         public ActionResult Index()
+
         {
             var bookings = db.Bookings.Include(b => b.Rooms).Include(b => b.Customers);
             return View(bookings.ToList());
@@ -42,10 +45,10 @@ namespace BookRoom.Controllers
         public ActionResult Create()
         {
             dynamic mymodel = new ExpandoObject();
-            ViewBag.roomID = new SelectList(db.Rooms, "RoomsID", "RoomsID");
-            ViewBag.Beds = new SelectList(db.Rooms, "Beds", "Beds");
+            ViewBag.RoomsID = new SelectList(db.Rooms.Select(i => i.RoomsID).Select(n => new { RoomsID = n }).First().ToString(), "RoomsID", "RoomsID");
+            ViewBag.Beds = new SelectList(db.Rooms.Select(i => i.beds).Distinct().Select(n => new { beds = n }).ToList(), "Beds", "Beds");
             ViewBag.Rooms = db.Rooms;
-            ViewBag.Size = new SelectList(db.Rooms, "size", "size");
+            ViewBag.Size = new SelectList(db.Rooms.Select(i => i.size).Distinct().Select(n => new { size = n}).ToList(), "size", "size");
             ViewBag.username = new SelectList(db.Customers, "CustomersID", "CustomersID");
             return View();
         }
@@ -55,16 +58,29 @@ namespace BookRoom.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookingsID,roomID,username,bookingfrom,bookingto,checkedin,checkedout")] Bookings bookings)
+        public ActionResult Create(FormCollection form, [Bind(Include = "Beds,Rooms,BookingsID,roomID,username,bookingfrom,bookingto,checkedin,checkedout")] Bookings bookings)
         {
+            string størrelse = form["size"];
+            string senger = form["Beds"];
+
+            int siz = int.Parse(størrelse);
+            int Bed = int.Parse(senger);
+
+            var fin = db.Rooms.Where(x => x.size == siz && x.beds == Bed);
+
+            first = fin.First();
+
+
             if (ModelState.IsValid)
             {
-                db.Bookings.Add(bookings);
+                int a = first.RoomsID;
+                bookings.roomID = a;
+                db.Bookings.Add(bookings);  
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.roomID = new SelectList(db.Rooms, "RoomsID", "RoomsID", bookings.roomID);
+            ViewBag.roomID = new SelectList(db.Rooms.Select(i => i.RoomsID), "RoomsID", "RoomsID", bookings.roomID);
             ViewBag.username = new SelectList(db.Customers, "CustomersID", "pass", bookings.username);
             return View(bookings);
         }

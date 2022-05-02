@@ -39,6 +39,7 @@ namespace BookRoom.Controllers
                     Session["CustomersID"] = user.FirstOrDefault().CustomersID;
                     return Redirect("/bookings/index");
                 }
+                
 
                 else
                 {

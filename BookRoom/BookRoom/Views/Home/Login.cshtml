@@ -15,7 +15,7 @@
         <table>
             <tr>
                 <td valign="top">
-                    <p>brukernavn</p>
+                    <p>Brukernavn</p>
                 </td>
                 <td>
                     @Html.EditorFor(model => model.CustomersID)
@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td valign="top">
-                    <p>passord</p>
+                    <p>Passord</p>
                 </td>
                 <td>
                     @Html.EditorFor(model => model.pass)
@@ -45,3 +45,10 @@
         </table>
     </div>
 }
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Register", "Create", "Customers")</li>
+
+    </ul>
+</div>

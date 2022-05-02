@@ -52,7 +52,7 @@ namespace BookRoom.Controllers
             {
                 db.Customers.Add(customers);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login", "Home");
             }
 
             return View(customers);

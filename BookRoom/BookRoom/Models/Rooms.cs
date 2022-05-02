@@ -29,5 +29,6 @@ namespace BookRoom.Models
         public virtual ICollection<Bookings> Bookings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tasks> Tasks { get; set; }
+
     }
 }

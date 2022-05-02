@@ -11,16 +11,21 @@ namespace BookRoom.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Bookings
     {
         public int BookingsID { get; set; }
         public Nullable<int> roomID { get; set; }
         public string username { get; set; }
-        public System.DateTime bookingfrom { get; set; }
-        public System.DateTime bookingto { get; set; }
-        public Nullable<System.DateTime> checkedin { get; set; }
-        public Nullable<System.DateTime> checkedout { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime bookingfrom { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime bookingto { get; set; }
+        [DataType(DataType.Time)]
+        public Nullable<DateTime> checkedin { get; set; }
+        [DataType(DataType.Time)]
+        public Nullable<DateTime> checkedout { get; set; }
     
         public virtual Rooms Rooms { get; set; }
         public virtual Customers Customers { get; set; }

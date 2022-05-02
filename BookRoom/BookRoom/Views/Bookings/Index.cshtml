@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Ny Booking", "Create")
 </p>
 <table class="table">
     <tr>
@@ -27,12 +27,15 @@
             @Html.DisplayNameFor(model => model.Rooms.RoomsID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Customers.pass)
+            @Html.DisplayNameFor(model => model.Customers.CustomersID)
         </th>
         <th></th>
     </tr>
-
+    
 @foreach (var item in Model) {
+
+    if (item.username == Session["CustomersID"].ToString())
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.bookingfrom)
@@ -50,14 +53,15 @@
             @Html.DisplayFor(modelItem => item.Rooms.RoomsID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Customers.pass)
+            @Html.DisplayFor(modelItem => item.Customers.CustomersID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BookingsID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookingsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookingsID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.BookingsID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BookingsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BookingsID })
         </td>
     </tr>
+    }
 }
 
 </table>
